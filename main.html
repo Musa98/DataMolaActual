@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>SocialNote</title>
+</head>
+
+<body>
+
+    <header>
+        <img class="logo" src="img/union.svg" alt="logo">
+        <div class="container-menu-user">
+            <span id="user" class="text-user-name">Musa</span>
+            <button class="exit-button">Exit</button>
+        </div>
+    </header>
+    <aside>
+        <button class="filter-button">
+            <span class="iconify" data-icon="mdi:tune-variant"></span>
+            <span class="text-filter-name">Filter</span>
+        </button>
+        <div class="container-add-twit">
+            <textarea class="textarea-add-twit" placeholder="Add twit..." maxlength="280"></textarea>
+            <button class="add-twit-button">Add twit</button>
+        </div>
+    </aside>
+    <div class="container-main">
+        <form class="container-filter" name="filter">
+            <div class="title-with-container">
+                <span>User</span>
+                <input class="choose-user-name"></input>
+            </div>
+            <div class="title-with-container">
+                <span>Date</span>
+                <div class="choose-date">
+                    <input id="date-from" type="date">
+                    <span class="iconify" data-icon="mdi:minus"></span>
+                    <input id="date-to" type="date">
+                </div>
+            </div>
+            <div class="title-with-container">
+                <span>Context</span>
+                <input class="context-input">
+            </div>
+            <div class="title-with-container">
+                <span>Tag</span>
+                <div class="add-tag">
+                    <input class="input-tag">
+                    <button class="button-add-tag"><span class="iconify"
+                            data-icon="mdi:plus-circle-outline"></span></button>
+                    <input type="submit" class="save-button" value="Save">
+                </div>
+            </div>
+            <hr color="black" size="1px">
+            <div class="tags-list">
+            </div>
+        </form>
+        <main id="tweet-collection">
+            
+        </main>
+    </div>
+    <footer>
+        <span class="name-of-web-site">SocialNote</span>
+        <span class="name-of-creator">Creator: Musa</span>
+        <div class="contacts">
+            <div class="container-gmail-information">
+                <img src="img/email.svg" alt="email">
+                <span class="text-email">Gmail: gsunnymus@gmail.com</span>
+            </div>
+            <div class="last-date-change">
+                <img src="img/white-calendar.svg">
+                <span class="text-last-date-change">22.01.22</span>
+            </div>
+        </div>
+    </footer>
+
+    <template id="template">
+        <aside>
+            <button class="filter-button">
+                <span class="iconify" data-icon="mdi:tune-variant"></span>
+                <span class="text-filter-name">Filter</span>
+            </button>
+        <div class="container-add-twit">
+            <textarea class="textarea-add-twit" placeholder="Add twit..." maxlength="280"></textarea>
+            <button class="add-twit-button">Add twit</button>
+        </div>
+        </aside>
+        <script>
+            var btn = document.querySelector('.filter-button');
+            btn.onclick = function (e) {
+                var element = document.querySelector(".container-filter");
+                if (element.classList.contains("show-block")) {
+                    element.classList.remove("show-block");
+                } else {
+                    element.classList.add("show-block");
+                }
+            }
+        </script>
+    </template>
+
+    <template id="button-main-template">
+            <button class="main-button">
+                <span class="iconify" data-icon="mdi:home-import-outline"></span>
+                <span>Main</span>
+            </button>
+    </template>
+
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
+    <script src="tweets.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        var btn = document.querySelector('.filter-button');
+        btn.onclick = function (e) {
+            var element = document.querySelector(".container-filter");
+            if (element.classList.contains("show-block")) {
+                element.classList.remove("show-block");
+            } else {
+                element.classList.add("show-block");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
